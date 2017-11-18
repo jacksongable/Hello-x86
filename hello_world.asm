@@ -6,11 +6,11 @@
 
 section .data	; the section of the program containing initialized data
 
-		msg	db	"Hello world!", 0xA	; set "Hello world!" as the message to print (0xA appends a newline)
-	
-		len	equ	$ - msg			; 'length of msg' = 'current address' - 'address of msg'
+	msg	db	"Hello world!", 0xA	; set "Hello world!" as the message to print (0xA appends a newline)
 
-		K_CALL	equ	0x80			; the software interrupt to fire. Interrupt 0x80 notifies the Linux kernel to 
+	len	equ	$ - msg			; 'length of msg' = 'current address' - 'address of msg'
+
+	K_CALL	equ	0x80			; the software interrupt to fire. Interrupt 0x80 notifies the Linux kernel to 
 							; execute the system call set in register EAX using the arguments 
 							; found in other registers as necessary
 
